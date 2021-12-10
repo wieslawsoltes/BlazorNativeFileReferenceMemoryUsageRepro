@@ -17,7 +17,7 @@ jobs:
       run: dotnet workload install wasm-tools
 
     - name: Publish .NET Project
-      run: dotnet publish BlazorApp3\BlazorApp3.csproj -c Release -o release --nologo
+      run: dotnet publish BlazorApp3/BlazorApp3.csproj -c Release -o release --nologo
 
     - name: Change base-tag in index.html from / to WebDemos
       run: sed -i 's/<base href="\/" \/>/<base href="\/BlazorNativeFileReferenceMemoryUsageRepro\/" \/>/g' release/wwwroot/index.html
